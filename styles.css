@@ -1,0 +1,33 @@
+  /* WyÅ‚Ä…czenie marginesÃ³w i odstÄ™pÃ³w
+          w caÅ‚ym dokumencie HTML     */
+*{
+    margin: 0;
+    padding: 0;
+  }
+  /* Ustawienie koloru tÅ‚a. */
+  body{
+    background-color: rgb(50, 54, 59);
+  }
+  /* Ustawienie rozmiaru kontenera mapy. */
+  .map{
+      height: 90vh;
+      padding-top: 1vh;
+  }
+  /* Ustawienie rozmiaru kontenera nagÅ‚Ã³wkowego. */
+  .header{
+      height: 8vh;
+  }
+  /* Ustawienie stylu w rozwijanym menu */
+  #infoDiv{
+    font-weight: bolder;
+    font-size: 13px;
+    color: white;
+    font-family: Lucida Grande, Helvetica, sans-serif;
+  }
+  .widget{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .esri-ui-corner .esri-component {
+    box-shadow: inherit;
+  }

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Kamień w architekturze Lublina</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://js.arcgis.com/4.11/esri/css/main.css">
+  <script src="https://js.arcgis.com/4.11/"></script>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="script.js"></script>
+</head>
+<body>
+  <!-- Główny kontener div zawierający pomniejsze kontenery -->
+  <div class="header w3-container w3-center ">
+    <!-- kontener z wysuwanym menu -->
+    <div class="widget w3-sidebar w3-bar-block w3-left-align w3-animate-right" style="display:none;right:0" id="infoDiv">
+      <button onclick="m_close()" class="w3-bar-item w3-large material-icons w3-hover-red w3-center">clear</button>
+      <form name="skaly">
+        <input class="w3-radio" type="radio" name="skaly" value="dioryt"> Dioryty<br>
+        <input class="w3-radio" type="radio" name="skaly" value="gabro"> Gabro<br>
+        <input class="w3-radio" type="radio" name="skaly" value="gnejs"> Gnejsy<br>
+        <input class="w3-radio" type="radio" name="skaly" value="granit strzegomski"> Granity strzegomskie<br>
+        <input class="w3-radio" type="radio" name="skaly" value="granity inne"> Granity inne<br>
+        <input class="w3-radio" type="radio" name="skaly" value="migmatyt"> Migmatyty<br>
+        <input class="w3-radio" type="radio" name="skaly" value="narzutniaki"> Narzutniaki<br>
+        <input class="w3-radio" type="radio" name="skaly" value="opoka"> Opoki<br>
+        <input class="w3-radio" type="radio" name="skaly" value="piaskowiec"> Piaskowce<br>
+        <input class="w3-radio" type="radio" name="skaly" value="sjenit"> Sjenity<br>
+        <input class="w3-radio" type="radio" name="skaly" value="wapień"> Wapienie<br>
+        <input class="w3-radio" type="radio" name="skaly" value="zlepieniec"> Zlepieńce<br><br>
+      </form>
+      <input type="submit" value="Podświetl" id="query" class="w3-button w3-round  w3-small w3-blue w3-hover-green">
+      <br><br>
+      <button class="w3-button w3-round  w3-small w3-orange w3-hover-red" id="highlight"> Wyłącz podświetlanie</button>
+      <br><br>
+      <table>
+        <tr>
+          <td>Pora dnia:</td>
+          <td>
+            <select id="poraDnia" class="w3-select w3-signal-black">
+              <option value="Sun APR 15 2019 09:00:00 GMT+0100 (CET)"><b>Ranek</b></option>
+              <option value="Sun APR 15 2019 12:00:00 GMT+0100 (CET)" selected><b>Południe</b></option>
+              <option value="Sun APR 15 2019 16:00:00 GMT+0100 (CET)"><b>Popołudnie</b></option>
+              <option value="Sun APR 15 2019 17:45:00 GMT+0100 (CET)"><b>Wieczór</b></option>
+            </select>
+          </td>
+
+      </table>
+    </div>
+    <!-- kontener z nagłówkiem strony oraz przyciskiem rozwijającym menu -->
+    <div class="header w3-signal-black ">
+      <!-- Przycisk do rozwijania menu -->
+      <button class="w3-button w3-signal-black w3-xlarge w3-right w3-ripple" onclick="m_open()"><i
+          class="material-icons w3-text-white">settings</i></button>
+       <!-- Tytuł dla dużych urządzeń -->
+      <h2 class="w3-text-white w3-hide-small  w3-hide-medium w3-center"><b>Wykorzystanie kamienia w architekturze Lublina na przestrzeni
+          wieków</b></h2> 
+       <!-- Tytuł dla średnich urządzeń -->
+      <h3 class="w3-text-white w3-hide-large w3-hide-small w3-center"><b>Wykorzystanie kamienia w architekturze Lublina na przestrzeni
+              wieków</b></h3>
+       <!-- Tytuł dla małych urządzeń -->
+      <h5 class="w3-text-white w3-hide-large w3-hide-medium w3-center"><b>Wykorzystanie kamienia w architekturze Lublina na przestrzeni
+              wieków</b></h4>
+    </div>
+    <!-- kontener z mapą -->
+    <div id="viewDiv" class="map w3-col s12 m12 l12"></div>
+  </div>
+</body>
+</html>
